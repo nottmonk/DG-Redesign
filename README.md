@@ -22,6 +22,10 @@ I have identified several enhancements that could be made to the current Dollar 
 
 ![Improvment idea](image.png)
 
+# ERD
+
+![alt text](ERD.png)
+
 ## Component Hierachy Diagram
 
 ![alt text](<Dg Website.png>)
