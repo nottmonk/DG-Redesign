@@ -11,7 +11,7 @@ I have identified several enhancements that could be made to the current Dollar 
 # Technologies
 
 1. React
-2. Django
+2. Express
 3. Heroku
 4. JavaScript
 5. CSS
@@ -25,3 +25,7 @@ I have identified several enhancements that could be made to the current Dollar 
 ## Component Hierachy Diagram
 
 ![alt text](<Dg Website.png>)
+
+### credit
+
+chatgpt
