@@ -1,35 +1,8 @@
-# Corey Cameron's DG-Redesign
+# React + Vite
 
-# Links
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-[GitHub](https://github.com/nottmonk/DG-Redesign) | [LinkedIn](https://www.linkedin.com/in/corey-cameron-319873221/)| [Trello](https://trello.com/b/Y3IRWVsn/final-project)
+Currently, two official plugins are available:
 
-## Description
-
-I have identified several enhancements that could be made to the current Dollar General website. My goal is to enhance the overall appearance by refining the layout of specific categories, optimizing the website's speed, and improving its navigation to create a more user-friendly experience
-
-# Technologies
-
-1. React
-2. Express
-3. Heroku
-4. JavaScript
-5. CSS
-6. GitHub
-7. LucidChart
-
-# WireFrame
-
-![Improvment idea](image.png)
-
-# ERD
-
-![alt text](ERD.png)
-
-## Component Hierachy Diagram
-
-![alt text](<Dg Website.png>)
-
-### credit
-
-chatgpt
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
