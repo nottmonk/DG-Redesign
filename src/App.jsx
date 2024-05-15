@@ -13,8 +13,11 @@ import SignIn from './components/DetailsView/SignIn'
 import Profile from './components/Pages/Profile'
 import { NavLink, Routes, Route } from 'react-router-dom'
 import { CheckSession } from './components/services/Auth'
+import { BASE_URL } from './globals'
+import axios from 'axios'
 function App() {
   const [user, setUser] = useState(null)
+
 
   const checkToken = async () => {
     const user = await CheckSession()
@@ -29,6 +32,8 @@ function App() {
   }, [])
 
 
+
+
   return (
     <div>
       <header>
@@ -40,10 +45,10 @@ function App() {
           <Route path='/career' element={<Career />} />
           <Route path='/deals' element={<Ccb />} />
           <Route path='/weekly-ads' element={<WeeklyAds />} />
-          <Route path='/myDG' element={<MyDG />} />
+          <Route path='/myDG' element={<MyDG user={user} />} />
           <Route path='/signin' element={<SignIn setUser={setUser} />} />
           <Route path='/register' element={<Register />} />
-          <Route path='/profile' element={<Profile user={user} />} />
+          <Route path='/profile' element={<Profile />} />
         </Routes>
       </div>
     </div>
