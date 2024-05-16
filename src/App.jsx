@@ -13,6 +13,7 @@ import SignIn from './components/DetailsView/SignIn'
 import Profile from './components/Pages/Profile'
 import { NavLink, Routes, Route } from 'react-router-dom'
 import { CheckSession } from './components/services/Auth'
+import Update from './components/DetailsView/Update'
 import { BASE_URL } from './globals'
 import axios from 'axios'
 function App() {
@@ -49,6 +50,7 @@ function App() {
           <Route path='/signin' element={<SignIn setUser={setUser} />} />
           <Route path='/register' element={<Register />} />
           <Route path='/profile' element={<Profile />} />
+          <Route path='/update' element={<Update user={user} setUser={setUser} />} />
         </Routes>
       </div>
     </div>
