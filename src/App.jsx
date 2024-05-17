@@ -25,7 +25,16 @@ import { BASE_URL } from './globals'
 import axios from 'axios'
 function App() {
   const [user, setUser] = useState(null)
+  const [products, setProduct] = useState([])
 
+
+
+
+  const getProduct = async () => {
+    let response = await axios.get('http://localhost:4000/products')
+    console.log(response)
+    setProduct(response.data)
+  }
 
   const checkToken = async () => {
     const user = await CheckSession()
@@ -38,6 +47,10 @@ function App() {
       checkToken()
     }
   }, [])
+
+  useEffect(() => {
+    getProduct()
+  })
 
 
 
@@ -59,13 +72,13 @@ function App() {
           <Route path='/register' element={<Register />} />
           <Route path='/profile' element={<Profile />} />
           <Route path='/update' element={<Update user={user} setUser={setUser} />} />
-          <Route path='/food' element={<Food />} />
-          <Route path='/household' element={<HouseHold />} />
-          <Route path='/office-toys' element={<OfficeToys />} />
-          <Route path='/pet' element={<Pet />} />
-          <Route path='/beauty-health' element={<BeautyHealth />} />
-          <Route path='/baby-apparel' element={<BabyApparel />} />
-          <Route path='auto-more' element={<AutoMore />} />
+          <Route path='/food' element={<Food products={products} />} />
+          <Route path='/household' element={<HouseHold products={products} />} />
+          <Route path='/office-toys' element={<OfficeToys products={products} />} />
+          <Route path='/pet' element={<Pet products={products} />} />
+          <Route path='/beauty-health' element={<BeautyHealth products={products} />} />
+          <Route path='/baby-apparel' element={<BabyApparel products={products} />} />
+          <Route path='/auto-more' element={<AutoMore products={products} />} />
         </Routes>
       </div>
     </div>
