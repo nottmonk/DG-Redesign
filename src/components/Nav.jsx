@@ -1,15 +1,15 @@
 import React from 'react'
 import { Link, NavLink, useNavigate } from 'react-router-dom'
+import { Navbar, Nav, NavDropdown, Container } from 'react-bootstrap';
 import Select from 'react-select'
 
 
-const Nav = () => {
+const NavComponent = () => {
     let navigate = useNavigate()
 
-    const handleSelectChange = (selectedOption) => {
-        navigate(selectedOption.value)
-    }
-
+    const handleSelectChange = (eventKey) => {
+        navigate(eventKey);
+    };
     const options = [
         { value: '/food', label: "food" },
         { value: '/baby-apparel', label: 'Baby & Apparel' },
@@ -22,15 +22,30 @@ const Nav = () => {
 
     ]
     return (
-        <div>
-            <NavLink to="/">Home</NavLink>&nbsp;&nbsp;
-            <NavLink to="/career">Career</NavLink>&nbsp;&nbsp;
-            <NavLink to="/myDG">MyDG</NavLink>&nbsp;&nbsp;
-            <NavLink to="/weekly-ads">Weekly Ads</NavLink>&nbsp;&nbsp;
-            <NavLink to="/deals">Coupons & Cash Back</NavLink>&nbsp;&nbsp;
-            <Select options={options} onChange={handleSelectChange} placeholder={'Categories'}></Select>
-        </div>
-    )
-}
+        <Navbar bg="dark" variant='dark' expand="lg">
+            <Container>
+                <Navbar.Brand as={NavLink} to="/">Home</Navbar.Brand>
+                <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                <Navbar.Collapse id="basic-navbar-nav">
+                    <Nav className="me-auto">
+                        <NavDropdown title="Categories" id="basic-nav-dropdown" onSelect={handleSelectChange}>
+                            <NavDropdown.Item eventKey="/food">Food</NavDropdown.Item>
+                            <NavDropdown.Item eventKey="/baby-apparel">Baby & Apparel</NavDropdown.Item>
+                            <NavDropdown.Item eventKey="/office-toys">Office & Toys</NavDropdown.Item>
+                            <NavDropdown.Item eventKey="/pet">Pet</NavDropdown.Item>
+                            <NavDropdown.Item eventKey="/household">Household</NavDropdown.Item>
+                            <NavDropdown.Item eventKey="/beauty-health">Beauty & Health</NavDropdown.Item>
+                            <NavDropdown.Item eventKey="/auto-more">Auto & Hardware & OutdoorLiving</NavDropdown.Item>
+                        </NavDropdown>
+                        <Nav.Link as={NavLink} to="/deals">Coupons & Cash Back</Nav.Link>
+                        <Nav.Link as={NavLink} to="/weekly-ads">Weekly Ads</Nav.Link>
+                        <Nav.Link as={NavLink} to="/career">Career</Nav.Link>
+                        <Nav.Link as={NavLink} to="/myDG">MyDG</Nav.Link>
+                    </Nav>
+                </Navbar.Collapse>
+            </Container>
+        </Navbar>
+    );
+};
 
-export default Nav
+export default NavComponent

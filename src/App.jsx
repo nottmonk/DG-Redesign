@@ -22,8 +22,11 @@ import HouseHold from './components/Categories/HouseHold'
 import OfficeToys from './components/Categories/Office-Toys'
 import Pet from './components/Categories/Pet'
 import Delete from './components/DetailsView/Delete'
+import 'bootstrap/dist/css/bootstrap.min.css';
 import { BASE_URL } from './globals'
+
 import axios from 'axios'
+
 function App() {
   const [user, setUser] = useState(null)
   const [products, setProduct] = useState([])
