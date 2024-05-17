@@ -6,7 +6,8 @@ const AutoMore = ({ products }) => {
         <div>
             {products.map(product => (
                 <div>
-                    <p>{product.title}</p>
+                    <h1>{product.title}</h1>
+
                 </div>
             ))}
 

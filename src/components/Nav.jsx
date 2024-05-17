@@ -28,11 +28,7 @@ const Nav = () => {
             <NavLink to="/myDG">MyDG</NavLink>&nbsp;&nbsp;
             <NavLink to="/weekly-ads">Weekly Ads</NavLink>&nbsp;&nbsp;
             <NavLink to="/deals">Coupons & Cash Back</NavLink>&nbsp;&nbsp;
-            <NavLink to='/profile'>myProfile</NavLink>&nbsp;&nbsp;
-            <Select options={options} onChange={handleSelectChange} placeholder={'Categories'}>
-
-
-            </Select>
+            <Select options={options} onChange={handleSelectChange} placeholder={'Categories'}></Select>
         </div>
     )
 }

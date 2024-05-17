@@ -21,6 +21,7 @@ import BeautyHealth from './components/Categories/Beauty-Health'
 import HouseHold from './components/Categories/HouseHold'
 import OfficeToys from './components/Categories/Office-Toys'
 import Pet from './components/Categories/Pet'
+import Delete from './components/DetailsView/Delete'
 import { BASE_URL } from './globals'
 import axios from 'axios'
 function App() {
@@ -29,6 +30,10 @@ function App() {
 
 
 
+  const logout = () => {
+    setUser(null)
+    localStorage.clear
+  }
 
   const getProduct = async () => {
     let response = await axios.get('http://localhost:4000/products')
@@ -79,6 +84,7 @@ function App() {
           <Route path='/beauty-health' element={<BeautyHealth products={products} />} />
           <Route path='/baby-apparel' element={<BabyApparel products={products} />} />
           <Route path='/auto-more' element={<AutoMore products={products} />} />
+          <Route path='/delete' element={<Delete user={user} logout={logout} />} />
         </Routes>
       </div>
     </div>
