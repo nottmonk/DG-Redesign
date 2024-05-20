@@ -8,7 +8,7 @@ const Delete = ({ user, logout }) => {
 
     const del = async () => {
         console.log(user.id)
-        await axios.delete(`http://localhost:4000/myDg/${user.id}`)
+        await axios.delete(`http://localhost:4000/myDg/${user._id}`)
         logout()
         navigate('/myDg')
     }

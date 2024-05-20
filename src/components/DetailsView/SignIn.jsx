@@ -17,7 +17,7 @@ const SignIn = (props) => {
         try {
             const payload = await SignInUser(formValues);
             props.setUser(payload);
-            navigate('/home');
+            navigate('/');
         } catch (error) {
             setError('Account does not exist. Please register.');
         }

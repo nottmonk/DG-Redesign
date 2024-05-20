@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import axios from 'axios'
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 const Update = ({ user, setUser }) => {
@@ -34,16 +35,41 @@ const Update = ({ user, setUser }) => {
 
 
     return (
-        <div>
-            <div>
-                <form onSubmit={handleSubmit}>
-                    <input type='text' name='name' onChange={handleChange} defaultValue={user.name} placeholder={user.name} />
-                    <input type='text' name='email' onChange={handleChange} defaultValue={user.email} placeholder={user.email} />
-                    <button>Update</button>
-                </form>
+        <div className="container mt-5">
+            <div className="row justify-content-center">
+                <div className="col-md-6">
+                    <div className="card shadow-sm">
+                        <div className="card-body">
+                            <h2 className="card-title text-center mb-4">Edit</h2>
+                            <form onSubmit={handleSubmit}>
+                                <div className="mb-3">
+                                    <label htmlFor="name" className="form-label">Name</label>
+                                    <input
+                                        type="text"
+                                        name="name"
+                                        className="form-control"
+                                        value={isEditing.name || user.name}
+                                        onChange={handleChange}
+                                    />
+                                </div>
+                                <div className="mb-3">
+                                    <label htmlFor="email" className="form-label">Email</label>
+                                    <input
+                                        type="email"
+                                        name="email"
+                                        className="form-control"
+                                        value={isEditing.email || user.email}
+                                        onChange={handleChange}
+                                    />
+                                </div>
+                                <button type="submit" className="btn btn-primary btn-block">Update</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     )
-}
+};
 
 export default Update
