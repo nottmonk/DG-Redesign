@@ -1,28 +1,16 @@
-import React from 'react'
-import { Link, NavLink, useNavigate } from 'react-router-dom'
+import React from 'react';
+import { Link, NavLink, useNavigate } from 'react-router-dom';
 import { Navbar, Nav, NavDropdown, Container } from 'react-bootstrap';
-import Select from 'react-select'
-
 
 const NavComponent = () => {
-    let navigate = useNavigate()
+    let navigate = useNavigate();
 
     const handleSelectChange = (eventKey) => {
         navigate(eventKey);
     };
-    const options = [
-        { value: '/food', label: "food" },
-        { value: '/baby-apparel', label: 'Baby & Apparel' },
-        { value: '/office-toys', label: 'Office & Toys' },
-        { value: '/pet', label: 'Pet' },
-        { value: '/household', label: 'HouseHold' },
-        { value: '/beauty-health', label: 'Beauty & Health' },
-        { value: 'auto-more', label: 'Auto & Hardware & OutdoorLiving' },
 
-
-    ]
     return (
-        <Navbar bg="dark" variant='dark' expand="lg">
+        <Navbar bg="black" variant='dark' expand="lg" fixed="top">
             <Container>
                 <Navbar.Brand as={NavLink} to="/">Home</Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -35,7 +23,7 @@ const NavComponent = () => {
                             <NavDropdown.Item eventKey="/pet">Pet</NavDropdown.Item>
                             <NavDropdown.Item eventKey="/household">Household</NavDropdown.Item>
                             <NavDropdown.Item eventKey="/beauty-health">Beauty & Health</NavDropdown.Item>
-                            <NavDropdown.Item eventKey="/auto-more">Auto & Hardware & OutdoorLiving</NavDropdown.Item>
+                            <NavDropdown.Item eventKey="/auto-more">Auto & Hardware & Outdoor Living</NavDropdown.Item>
                         </NavDropdown>
                         <Nav.Link as={NavLink} to="/deals">Coupons & Cash Back</Nav.Link>
                         <Nav.Link as={NavLink} to="/weekly-ads">Weekly Ads</Nav.Link>
@@ -48,4 +36,5 @@ const NavComponent = () => {
     );
 };
 
-export default NavComponent
+export default NavComponent;
+

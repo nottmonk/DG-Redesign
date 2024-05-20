@@ -13,13 +13,18 @@ const Delete = ({ user, logout }) => {
         navigate('/myDg')
     }
     return (
-
-        <div>
-            <h1>Are You Sure You Want To Delete?</h1>
-            <Link to='/myDg'><button>Cancel</button></Link>
-            <button onClick={del}>Confirm</button>
+        <div className="container mt-5">
+            <div className="card shadow-sm">
+                <div className="card-body">
+                    <h2 className="card-title text-center mb-4">Are You Sure You Want To Delete?</h2>
+                    <div className="d-flex justify-content-center">
+                        <Link to='/myDg' className="btn btn-secondary me-3">Cancel</Link>
+                        <button onClick={del} className="btn btn-danger">Confirm</button>
+                    </div>
+                </div>
+            </div>
         </div>
-    )
+    );
 }
 
 export default Delete
