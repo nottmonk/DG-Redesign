@@ -1,11 +1,12 @@
 import { useState } from 'react';
 import { SignInUser } from '../services/Auth';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const SignIn = (props) => {
-    let navigate = useNavigate();
+    const navigate = useNavigate();
     const [formValues, setFormValues] = useState({ email: '', password: '' });
+    const [error, setError] = useState('');
 
     const handleChange = (e) => {
         setFormValues({ ...formValues, [e.target.name]: e.target.value });
@@ -13,13 +14,13 @@ const SignIn = (props) => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        const payload = await SignInUser(formValues);
-        setFormValues({
-            email: "",
-            password: ""
-        });
-        props.setUser(payload);
-        navigate('/home');
+        try {
+            const payload = await SignInUser(formValues);
+            props.setUser(payload);
+            navigate('/home');
+        } catch (error) {
+            setError('Account does not exist. Please register.');
+        }
     };
 
     return (
@@ -29,6 +30,11 @@ const SignIn = (props) => {
                     <div className="card shadow-sm">
                         <div className="card-body">
                             <h2 className="card-title text-center mb-4">Sign In</h2>
+                            {error && (
+                                <div className="alert alert-danger" role="alert">
+                                    {error}
+                                </div>
+                            )}
                             <form onSubmit={handleSubmit}>
                                 <div className="form-group">
                                     <label htmlFor="email">Email</label>
@@ -61,6 +67,9 @@ const SignIn = (props) => {
                                     Sign In
                                 </button>
                             </form>
+                            <p className="mt-3 text-center">
+                                Don't have an account? <Link to="/register">Register here</Link>.
+                            </p>
                         </div>
                     </div>
                 </div>
