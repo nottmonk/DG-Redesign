@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { RegisterUser } from '../services/Auth';
 import { useNavigate } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import '/src/App.css';
 
 const Register = () => {
     let navigate = useNavigate();
@@ -34,12 +35,13 @@ const Register = () => {
     };
 
     return (
-        <div className="container mt-5">
-            <div className="row justify-content-center">
-                <div className="col-md-6">
-                    <div className="card shadow-sm">
-                        <div className="card-body">
-                            <h2 className="card-title text-center mb-4">Register</h2>
+        <div className="mydg-container">
+            <div className="container mt-5 pt-5">
+                <div className="row justify-content-center">
+
+                    <div className="custom-card shadow-lg">
+                        <div className="custom-card-body">
+                            <h2 className="custom-card-title text-center mb-4">Register</h2>
                             <form onSubmit={handleSubmit}>
                                 <div className="form-group">
                                     <label htmlFor="name">Name</label>
@@ -89,7 +91,7 @@ const Register = () => {
                                 </div>
                                 <button
                                     type="submit"
-                                    className="btn btn-primary btn-block"
+                                    className="btn btn-primary btn-block mt-3"
                                     disabled={
                                         !formValues.email ||
                                         !formValues.password ||
@@ -104,6 +106,7 @@ const Register = () => {
                 </div>
             </div>
         </div>
+
     );
 };
 
