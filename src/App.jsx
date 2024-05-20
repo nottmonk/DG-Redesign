@@ -40,7 +40,7 @@ function App() {
 
   const getProduct = async () => {
     let response = await axios.get('http://localhost:4000/products')
-    console.log(response)
+
     setProduct(response.data)
   }
 

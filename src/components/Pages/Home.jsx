@@ -14,6 +14,8 @@ const Home = () => {
                         className="img-fluid rounded shadow-lg"
                         style={{ maxWidth: '100%', height: 'auto' }}
                     />
+
+
                 </Col>
                 <Col xs={12} md={4} className="d-flex flex-column justify-content-between">
                     <img
