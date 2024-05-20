@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { SignInUser } from '../services/Auth';
 import { useNavigate, Link } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import '/src/App.css';
 
 const SignIn = (props) => {
     const navigate = useNavigate();
@@ -24,12 +25,13 @@ const SignIn = (props) => {
     };
 
     return (
-        <div className="container mt-5">
-            <div className="row justify-content-center">
-                <div className="col-md-6">
-                    <div className="card shadow-sm">
-                        <div className="card-body">
-                            <h2 className="card-title text-center mb-4">Sign In</h2>
+        <div className="mydg-container">
+            <div className="container mt-5 pt-5">
+                <div className="row justify-content-center">
+
+                    <div className="custom-card shadow-lg">
+                        <div className="custom-card-body">
+                            <h2 className="custom-card-title text-center mb-4">Sign In</h2>
                             {error && (
                                 <div className="alert alert-danger" role="alert">
                                     {error}
@@ -61,7 +63,7 @@ const SignIn = (props) => {
                                 </div>
                                 <button
                                     type="submit"
-                                    className="btn btn-primary btn-block"
+                                    className="btn btn-primary btn-block mt-3"
                                     disabled={!formValues.email || !formValues.password}
                                 >
                                     Sign In
@@ -75,6 +77,7 @@ const SignIn = (props) => {
                 </div>
             </div>
         </div>
+
     );
 };
 

@@ -25,7 +25,7 @@ const MyDG = (props) => {
                     ) : (
                         <div className="custom-card shadow-lg">
                             <div className="custom-card-body">
-                                <p className="custom-card-text">Not logged in.</p>
+                                <h2 className="custom-card-text">Not logged in.</h2>
                                 <div className="d-flex justify-content-between mt-3">
                                     <button className="btn btn-primary" onClick={() => navigate('/signin')}>Sign In</button>
                                     <Link to="/register" className="btn btn-secondary">Register</Link>
