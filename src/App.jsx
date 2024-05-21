@@ -79,7 +79,7 @@ function App() {
           <Route path='/signin' element={<SignIn setUser={setUser} />} />
           <Route path='/register' element={<Register />} />
           <Route path='/profile' element={<Profile />} />
-          <Route path='/update' element={<Update user={user} setUser={setUser} />} />
+          <Route path='/update' element={<Update user={user} setUser={setUser} checkToken={checkToken} />} />
           <Route path='/food' element={<Food products={products} />} />
           <Route path='/household' element={<HouseHold products={products} />} />
           <Route path='/office-toys' element={<OfficeToys products={products} />} />
