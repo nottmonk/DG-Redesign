@@ -13,7 +13,7 @@ const Update = ({ user, setUser, checkToken }) => {
     console.log(user)
 
     const getUser = async () => {
-        const response = await axios.get(`https://dgredesign-ec400b2ab7c2.herokuapp.com/myDg/${user.id}`)
+        const response = await axios.get(`https://dg-recreate-3d0ee82e3471.herokuapp.com/myDg/${user.id}`)
 
         setisEditing(response.data)
     }
@@ -29,7 +29,7 @@ const Update = ({ user, setUser, checkToken }) => {
 
     const handleSubmit = async (e) => {
         e.preventDefault()
-        const response = await axios.put(`https://dgredesign-ec400b2ab7c2.herokuapp.com/myDg/${user.id}`, isEditing)
+        const response = await axios.put(`https://dg-recreate-3d0ee82e3471.herokuapp.com/myDg/${user.id}`, isEditing)
         setUser(response.data)
         checkToken()
         navigate("/myDg")

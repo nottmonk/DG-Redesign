@@ -39,7 +39,7 @@ function App() {
   }
 
   const getProduct = async () => {
-    let response = await axios.get('https://dgredesign-ec400b2ab7c2.herokuapp.com/products')
+    let response = await axios.get('https://dg-recreate-3d0ee82e3471.herokuapp.com/products')
 
     setProduct(response.data)
   }
