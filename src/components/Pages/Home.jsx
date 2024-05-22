@@ -19,7 +19,7 @@ const Home = () => {
                 </Col>
                 <Col xs={12} md={4} className="d-flex flex-column justify-content-between">
                     <img
-                        src="/public/Home_Decor_Small_Banner_r1.jpg"
+                        src="./public/Home_Decor_Small_Banner_r1.jpg"
                         alt='small1'
                         className="img-fluid mb-3 rounded shadow-sm"
                         style={{ maxWidth: '100%', height: 'auto' }}

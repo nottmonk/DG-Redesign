@@ -46,6 +46,8 @@ function App() {
 
   const checkToken = async () => {
     const user = await CheckSession()
+    console.log('test')
+    console.log(user)
     setUser(user)
   }
 
@@ -66,7 +68,7 @@ function App() {
   return (
     <div>
       <header>
-        <Nav />
+        <Nav logout={logout} user={user} />
       </header>
 
       <div>

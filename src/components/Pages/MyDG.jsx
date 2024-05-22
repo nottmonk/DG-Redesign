@@ -1,21 +1,23 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '/src/App.css';
 
-const MyDG = (props) => {
+const MyDG = ({ user, setUser }) => {
     let navigate = useNavigate();
+
+
 
     return (
         <div className="mydg-container">
             <div className="container mt-5 pt-5">
                 <div className="row justify-content-center">
 
-                    {props.user ? (
+                    {user ? (
                         <div className="custom-card shadow-lg">
                             <div className="custom-card-body">
-                                <h4 className="custom-card-title">Name: {props.user.name}</h4>
-                                <h4 className="custom-card-text">Email: {props.user.email}</h4>
+                                <h4 className="custom-card-title">Name: {user.name}</h4>
+                                <h4 className="custom-card-text">Email: {user.email}</h4>
                                 <div className="d-flex justify-content-between mt-3">
                                     <Link to="/update" className="btn btn-primary">Edit</Link>
                                     <Link to="/delete" className="btn btn-danger">Delete</Link>

@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link, NavLink, useNavigate } from 'react-router-dom';
-import { Navbar, Nav, NavDropdown, Container } from 'react-bootstrap';
+import { Navbar, Nav, NavDropdown, Container, Button } from 'react-bootstrap';
 
-const NavComponent = () => {
+const NavComponent = ({ logout, user }) => {
     let navigate = useNavigate();
 
     const handleSelectChange = (eventKey) => {
@@ -30,6 +30,11 @@ const NavComponent = () => {
                         <Nav.Link as={NavLink} to="/career">Career</Nav.Link>
                         <Nav.Link as={NavLink} to="/myDG">MyDG</Nav.Link>
                     </Nav>
+                    {user && (
+                        <Nav className="ml-auto">
+                            <Button variant="outline-light" onClick={logout}>Logout</Button>
+                        </Nav>
+                    )}
                 </Navbar.Collapse>
             </Container>
         </Navbar>

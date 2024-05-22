@@ -28,10 +28,18 @@ const Update = ({ user, setUser, checkToken }) => {
     }, [])
 
     const handleSubmit = async (e) => {
+
+
         e.preventDefault()
+        console.log(isEditing)
+
         const response = await axios.put(`https://dg-recreate-3d0ee82e3471.herokuapp.com/myDg/${user.id}`, isEditing)
         setUser(response.data)
-        checkToken()
+        getUser()
+        // setTimeout(() => {
+        //     checkToken()
+
+        // }, 1000)
         navigate("/myDg")
     }
 

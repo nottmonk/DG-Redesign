@@ -9,7 +9,10 @@ const Delete = ({ user, logout }) => {
     const del = async () => {
         console.log(user.id)
         console.log(user)
-        await axios.delete(`https://dg-recreate-3d0ee82e3471.herokuapp.com/myDg/${user.id}`)
+        const userId = user.id || user._id
+        if (userId) {
+            await axios.delete(`https://dg-recreate-3d0ee82e3471.herokuapp.com/myDg/${userId}`)
+        }
         logout()
         navigate('/myDg')
     }
