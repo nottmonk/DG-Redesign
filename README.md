@@ -4,7 +4,7 @@
 
 # Links
 
-[GitHub](https://github.com/nottmonk/DG-Redesign) | [LinkedIn](https://www.linkedin.com/in/corey-cameron-319873221/)| [Trello](https://trello.com/b/Y3IRWVsn/final-project)| [Application](https://dg-recreate-3d0ee82e3471.herokuapp.com/) [Backend](https://github.com/nottmonk/DG-Redesign-Backend)
+[GitHub](https://github.com/nottmonk/DG-Redesign) | [LinkedIn](https://www.linkedin.com/in/corey-cameron-319873221/)| [Trello](https://trello.com/b/Y3IRWVsn/final-project)| [Application](https://dg-redesign.onrender.com) [Backend](https://github.com/nottmonk/DG-Redesign-Backend)
 
 ## Description
 
